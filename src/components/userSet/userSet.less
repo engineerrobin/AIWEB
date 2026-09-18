@@ -1,0 +1,100 @@
+/* Styles for UserSet component */
+.user-set-content {
+  padding: 12px;
+}
+
+.user-set-grid {
+  display: grid;
+  /* Default: 3 equal columns */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 16px;
+  align-items: start;
+}
+
+/* Each config item: label + control */
+.user-set-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.user-set-row label {
+  min-width: 80px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+// .chat-item{
+//     // 添加滚动条以便内容超出时可以滚动
+//     overflow-y: auto;
+//     max-height: 800px; /* 可根据需要调整最大高度 */
+//     scrollbar-width: thin; /* For Firefox */
+//     &::-webkit-scrollbar {
+//       width: 8px;
+//     }
+//     &::-webkit-scrollbar-thumb {
+//       background-color: rgba(0, 0, 0, 0.2);
+//       border-radius: 4px;
+//     }
+// }
+
+/* Select width helpers (consistent widths for same config types) */
+.select-minw160 .ant-select-selector { min-width: 160px !important; }
+.w160 .ant-select-selector { max-width: 100%; }
+.w140 .ant-select-selector { max-width: 100%; }
+.w120 .ant-select-selector { max-width: 100%; }
+.w200 .ant-select-selector {max-width: 100%; }
+.w180 .ant-select-selector {max-width: 100%; }
+// .select-ml12 { margin-left: 12px; }
+.input-number-w120 { min-width: 120px; max-width: 100%; }
+
+.btn-row { width: 100%; display: flex; justify-content: center; margin-top: 2rem; }
+
+.user-set-result { margin-top: 16px; color: #666; }
+
+/* Control group: keeps controls aligned on same widths across items */
+.control-group { display: flex; align-items: center; gap: 8px; width: 100%; max-width: none; }
+.control-group > .ant-select,
+.control-group > .ant-input-number,
+.control-group .ant-select-selector { flex: 1 1 auto; width: 100% !important; min-width: 0; }
+.control-group > .ant-select + .ant-select,
+.control-group > .ant-select + .ant-input-number,
+// .control-group .select-ml12 { margin-left: 12px; }
+.user-set-row.last-row { grid-column: 1 / -1; }
+
+/* Responsive breakpoints: 3 -> 2 -> 1 columns */
+@media (max-width: 900px) {
+  .user-set-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 420px) {
+  .user-set-grid { grid-template-columns: 1fr; }
+  .user-set-row { grid-template-columns: 1fr; }
+  .control-group { flex-direction: column; align-items: stretch; gap: 6px; }
+  .user-set-row label { min-width: 0; }
+}
+
+.control-group .ant-select .ant-select-selector {
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+/* Let dropdown expand to fit longest option but cap to viewport */
+.ant-select-dropdown {
+  min-width: max-content !important;
+  max-width: 90vw !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .control-group .ant-select,
+  .control-group .ant-input-number { width: 180px; }
+}
+
+@media (max-width: 420px) {
+  .control-group .ant-select,
+  .control-group .ant-input-number { width: 100%; min-width: 0; }
+}

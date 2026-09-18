@@ -1,0 +1,189 @@
+.ssq-page {
+  height: 100%;
+  padding: 8px;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  .ant-spin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  .ssq-header {
+    // background: @var;
+    padding: 8px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    margin-left: 2vw;
+    font-size: 1rem;
+    .ant-select {
+      background-color: transparent;
+      // height: 1.2rem;
+      font-size: 1rem !important;
+    }
+  }
+  .ant-spin-container {
+    width: 100%;
+    // height: 100%;
+  }
+  .ant-table-thead >tr>th{
+    text-align: center;
+  }
+  .ant-table-cell{
+    padding: 6px !important;
+  }
+}
+.ssq-page::-webkit-scrollbar {
+  width: 0; /* Safari and Chrome */
+  height: 0;
+}
+/* Hide scrollbars inside Ant Table body as well */
+.ant-table-body,
+.ant-table-scroll .ant-table-body {
+  -ms-overflow-style: auto;
+  scrollbar-width: thin; /* allow scrolling in Firefox */
+}
+/* WebKit: hide vertical scrollbar (width=0) but keep horizontal thumb visible */
+.ant-table-body::-webkit-scrollbar,
+.ant-table-scroll .ant-table-body::-webkit-scrollbar {
+  width: 0;    /* hide vertical scrollbar */
+  height: 8px; /* keep horizontal scrollbar height available */
+}
+.ant-table-body::-webkit-scrollbar-thumb,
+.ant-table-scroll .ant-table-body::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.12);
+  border-radius: 4px;
+}
+.ssq-page,
+.ant-table-container,
+.ant-table-scroll,
+.ant-table-body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow: auto !important; /* enable both-direction scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide native scrollbars in WebKit but keep scrolling usable */
+.ssq-page::-webkit-scrollbar,
+.ant-table-body::-webkit-scrollbar,
+.ant-table-scroll .ant-table-body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.ssq-table .blue-ball {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 50%;
+  background: #1890ff;
+  color: #fff;
+  text-align: center;
+  margin-right: 6px;
+  font-weight: 600;
+}
+.omit {
+  display: inline-block;
+  font-size: 11px;
+  color: rgba(0,0,0,0.45);
+  margin-left: 4px;
+}
+
+.balls-grid {
+  display: flex;
+  flex-wrap: wrap;
+  // gap: 4px;
+  max-width: 740px;
+}
+.cell {
+  min-width: 22px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 14px;
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  box-sizing: border-box;
+}
+.cell.absent {
+  background: #f5f5f5;
+  color: #999;
+}
+.cell.present.red {
+  background: #ff4d4f;
+  color: #fff;
+  font-weight: 600;
+}
+.cell.present.blue {
+  background: #1890ff;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* tighten table cell padding and center cell content */
+.ant-table td {
+  // padding: 2px 4px; /* reduced padding */
+}
+.ant-table thead > tr > th {
+  // padding: 2px 4px;
+}
+.ant-table td .cell {
+  margin: 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Thicker vertical separators after column 11 and 22 */
+.ant-table-container th.sep-col,
+.ant-table-container td.sep-col {
+  border-right: 3px solid #666 !important;
+}
+
+/* Sticky header when vertical scrolling */
+.ant-table thead > tr > th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+}
+
+/* Fix left column (period) when horizontal scroll */
+.ant-table-fixed-left .ant-table-cell-fix-left {
+  position: sticky;
+  left: 0;
+  z-index: 12;
+  background: #fff;
+}
+
+/* Ensure fixed-left cells stay above other cells and header stays above body */
+.ant-table .ant-table-cell-fix-left {
+  position: sticky;
+  left: 0;
+  z-index: 11;
+  background: #fff;
+}
+.ant-table thead > tr > th.ant-table-cell-fix-left {
+  z-index: 13; /* header above body fixed cells */
+}
+.ant-table-fixed-left .ant-table-cell-fix-left {
+  box-shadow: 2px 0 4px rgba(0,0,0,0.06);
+}
+.footer p {
+  // margin: 0;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 1rem;
+  color: red;
+}
+
+
