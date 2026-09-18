@@ -44,7 +44,7 @@ function App() {
       navigate('/'); // 登录成功后跳转到首页
     } catch (error) {
       // 接口层已经处理了401错误，这里只需要处理其他错误
-      // message.error(error.message || '登录失败');
+      message.error(error.message || '登录失败');
     }
   };
 

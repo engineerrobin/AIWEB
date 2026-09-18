@@ -127,7 +127,7 @@ const LotteryPage = () => {
           localStorage.removeItem('auth_token');
           localStorage.removeItem('auth_user');
           // 跳转到登录页
-          window.location.href = '/login';
+          navigate('/login');
         }else{
           // 打开模态框
           setOpen(true);
